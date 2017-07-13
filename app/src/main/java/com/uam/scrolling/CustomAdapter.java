@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import at.grabner.circleprogress.CircleProgressView;
+
 /**
  * Created by Iforce on 7/12/2017.
  */
@@ -37,9 +39,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         CustomPojo list_items=list_members.get(position);
+
         holder.user_name.setText(list_items.getName());
         holder.content.setText(list_items.getContent());
         holder.time.setText(list_items.getTime());
+        holder.mCircleView.setValue(list_items.getProgress());
     }
 
     //Setting the arraylist
@@ -56,13 +60,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView user_name,content,time;
+        CircleProgressView mCircleView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             user_name=(TextView)itemView.findViewById(R.id.user_name);
             content=(TextView)itemView.findViewById(R.id.content);
             time=(TextView)itemView.findViewById(R.id.time);
-
+            mCircleView = (CircleProgressView) itemView.findViewById(R.id.picture);
         }
 
         @Override

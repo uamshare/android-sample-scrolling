@@ -1,64 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="72dp"
-    android:padding="6dip"
-    android:clickable="true">
+    android:clickable="true"
+    android:padding="6dip">
 
-    <ImageView
+    <!--<ImageView-->
+    <!--android:id="@+id/picture"-->
+    <!--android:layout_width="45dp"-->
+    <!--android:layout_height="45dp"-->
+    <!--android:padding="0dp"-->
+    <!--android:src="@mipmap/ic_launcher_round"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true" />-->
+
+    <at.grabner.circleprogress.CircleProgressView
         android:id="@+id/picture"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:padding="0dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_marginLeft="16dp"
-        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/icon_left_margin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="19dp" />
-
-    <TextView
-        android:id="@+id/content"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="Content"
-        android:textSize="12sp"
-        android:paddingLeft="5dp"
-        android:textColor="@color/colorSecondaryText"
-        android:layout_below="@+id/user_name"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="72dp"
-        android:layout_marginRight="16dp" />
+        android:layout_centerVertical="true"
+        CircleProgressView:cpv_autoTextSize="true"
+        CircleProgressView:cpv_barColor="@color/colorPrimary"
+        CircleProgressView:cpv_barWidth="10dp"
+        CircleProgressView:cpv_innerContourSize="0dp"
+        CircleProgressView:cpv_maxValue="100"
+        CircleProgressView:cpv_outerContourSize="0dp"
+        CircleProgressView:cpv_rimColor="@color/colorPrimaryLight"
+        CircleProgressView:cpv_rimWidth="10dp"
+        CircleProgressView:cpv_seekMode="true"
+        CircleProgressView:cpv_showUnit="true"
+        CircleProgressView:cpv_spinColor="@color/colorPrimary"
+        CircleProgressView:cpv_textColor="@color/colorPrimaryDark"
+        CircleProgressView:cpv_textScale="1"
+        CircleProgressView:cpv_unit="%"
+        CircleProgressView:cpv_unitColor="@color/colorPrimaryLight"
+        CircleProgressView:cpv_unitPosition="right_top"
+        CircleProgressView:cpv_unitScale="1"
+        CircleProgressView:cpv_value="89"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/user_name"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignWithParentIfMissing="true"
-        android:gravity="center_vertical"
-        android:text="Username"
-        android:textSize="14sp"
-        android:paddingLeft="5dp"
-        android:textColor="@color/colorPrimaryText"
-        android:layout_alignTop="@+id/picture"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginLeft="72dp"
-        android:layout_marginRight="16dp"
-        android:paddingBottom="5dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/picture"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_marginLeft="@dimen/item_icon_left_margin"
+        android:layout_marginRight="@dimen/item_right_margin"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dp"
+        android:text="Username"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
 
     <TextView
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="time"
-        android:id="@+id/time"
-        android:textSize="10sp"
-        android:textColor="@color/colorSecondaryText"
-        android:layout_below="@+id/user_name"
+        android:layout_alignEnd="@+id/content"
         android:layout_alignRight="@+id/content"
-        android:layout_alignEnd="@+id/content" />
+        android:layout_alignTop="@+id/user_name"
+        android:text="time"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/user_name"
+        android:layout_marginLeft="@dimen/item_icon_left_margin"
+        android:layout_marginRight="@dimen/item_right_margin"
+        android:ellipsize="marquee"
+        android:text="Content"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/item_icon_left_margin"
+        android:layout_marginRight="@dimen/item_right_margin"
+        android:background="@color/colorDivider"
+        tools:ignore="RtlHardcoded" />
 
 </RelativeLayout>

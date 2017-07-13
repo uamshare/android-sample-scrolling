@@ -25,15 +25,25 @@
             android:name=".MainActivity"
             android:label="Home"
             android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".MyRecycleView"
+            android:label="General Inspection"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyRecycleView">
-
-        </activity>
+        <activity android:name=".CircleView"></activity>
     </application>
 
 </manifest>
